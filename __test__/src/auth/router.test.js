@@ -28,7 +28,7 @@ describe('Auth Router', () => {
         expect(response.status).toBe(201);
         expect(userObject.token).toBeDefined();
         expect(userObject.user._id).toBeDefined();
-        expect(userObject.user.username).toEqual(users[userType].username)
+        expect(userObject.user.username).toEqual(users[userType].username);
 
       });
 
@@ -41,7 +41,7 @@ describe('Auth Router', () => {
         expect(response.status).toBe(200);
         expect(userObject.token).toBeDefined();
         expect(userObject.user._id).toBeDefined();
-        expect(userObject.user.username).toEqual(users[userType].username)
+        expect(userObject.user.username).toEqual(users[userType].username);
 
       });
 
@@ -56,7 +56,7 @@ describe('Auth Router', () => {
         // First, use basic to login to get a token
         const bearerResponse = await mockRequest
           .get('/users')
-          .set('Authorization', `Bearer ${token}`)
+          .set('Authorization', `Bearer ${token}`);
 
         // Not checking the value of the response, only that we "got in"
         expect(bearerResponse.status).toBe(200);
@@ -86,7 +86,7 @@ describe('Auth Router', () => {
 
         expect(response.status).toBe(403);
         expect(userObject.user).not.toBeDefined();
-        expect(userObject.token).not.toBeDefined()
+        expect(userObject.token).not.toBeDefined();
 
       });
 
@@ -95,13 +95,13 @@ describe('Auth Router', () => {
         // First, use basic to login to get a token
         const bearerResponse = await mockRequest
           .get('/users')
-          .set('Authorization', `Bearer foobar`)
+          .set('Authorization', `Bearer foobar`);
 
         // Not checking the value of the response, only that we "got in"
         expect(bearerResponse.status).toBe(403);
 
-      })
-    })
+      });
+    });
 
   });
 

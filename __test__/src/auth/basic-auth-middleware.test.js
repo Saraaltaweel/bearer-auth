@@ -1,8 +1,8 @@
 'use strict';
 
 require('@code-fellows/supergoose');
-const middleware = require('../../../src/auth/middleware/basic.js');
-const Users = require('../../../src/auth/models/users.js');
+const middleware = require('../../../src/auth/middleware/basic');
+const Users = require('../../../src/auth/models/users');
 
 let users = {
   admin: { username: 'admin', password: 'password' },
@@ -23,8 +23,8 @@ describe('Auth Middleware', () => {
   const req = {};
   const res = {
     status: jest.fn(() => res),
-    send: jest.fn(() => res)
-  }
+    send: jest.fn(() => res),
+  };
   const next = jest.fn();
 
   describe('user authentication', () => {
