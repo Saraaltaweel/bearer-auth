@@ -1,5 +1,5 @@
 'use strict';
-require('dotenv').config();
+
 // 3rd Party Resources
 const express = require('express');
 const cors = require('cors');
